@@ -1,8 +1,7 @@
 TanPan 接口服务
 ===
-
-负责响应用户的请求,并向数据服务发送定位请求
-
+负责响应用户的请求,并向数据服务发送定位请求  
+本项目为《分布式对象存储——原理、架构及 GO 语言实现》一书的实践
 
 ## REST接口
 GET /locate/<object_name> -- 响应:定位结果  
@@ -14,10 +13,11 @@ GET /locate/<object_name> -- 响应:定位结果
 TODO
 
 ## Auther
-BuTn
+[BuTn](https://github.com/kimmosc2)
 
 ## 环境变量
-RabbitMQ地址:RABBITMQ_SERVER
-本地监听地址:LISTEN_ADDRESS
-本地存储路径:STORAGE_ROOT  
+RabbitMQ地址:RABBITMQ_SERVER  
+本地监听地址:LISTEN_ADDRESS  
 
+## 其他组件
+[数据服务](https://github.com/kimmosc2/upload-data)
