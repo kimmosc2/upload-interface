@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
+    // log.SetFlags(log.Llongfile)
     go heartbeat.ListenHeartBeat()
     http.HandleFunc("/objects/", objects.Handler)
     http.HandleFunc("/locate/",locate.Handler)

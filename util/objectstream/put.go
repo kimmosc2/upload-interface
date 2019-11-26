@@ -16,10 +16,13 @@ func NewPutStream(server, object string) *PutStream {
     c := make(chan error)
 
     go func() {
-        request, _ := http.NewRequest(http.MethodPut, "http://"+server+"/objects/"+object, reader)
-        client := http.Client{}
+        request, err := http.NewRequest(http.MethodPut, "http://"+server+"/objects/"+object, reader)
+        if err != nil {
+            panic(err)
+        }
+        client := &http.Client{}
         r, err := client.Do(request)
-        if err != nil && r.StatusCode != http.StatusOK {
+        if (err != nil) || (r.StatusCode != http.StatusOK) {
             err = fmt.Errorf("dataServer return http code %d", r.StatusCode)
         }
         c <- err

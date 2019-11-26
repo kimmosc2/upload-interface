@@ -118,5 +118,5 @@ func (q *RabbitMQ) Consume() <-chan amqp.Delivery {
 // 关闭消息队列
 func (q *RabbitMQ) Close() {
     q.channel.Close()
-    q._conn.Close()
+    // q._conn.Close()
 }

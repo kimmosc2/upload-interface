@@ -50,7 +50,7 @@ func removeExpiredDataServer() {
 func GetDataServers() []string {
     mutex.Lock()
     defer mutex.Unlock()
-    ds := make([]string, 0)
+    ds := make([]string,0)
     for s, _ := range dataServers {
         ds = append(ds, s)
     }

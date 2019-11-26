@@ -2,6 +2,7 @@ package locate
 
 import (
     "encoding/json"
+    "log"
     "net/http"
     "os"
     "strconv"
@@ -21,7 +22,12 @@ func Handler(w http.ResponseWriter, r *http.Request) {
         w.WriteHeader(http.StatusNotFound)
         return
     }
-    b, _ := json.Marshal(info)
+    b, err := json.Marshal(info)
+    if err != nil {
+        log.Println(err.Error())
+        w.WriteHeader(http.StatusInternalServerError)
+        return
+    }
     w.Write(b)
 }
 

@@ -19,4 +19,5 @@ BuTn
 ## 环境变量
 RabbitMQ地址:RABBITMQ_SERVER
 本地监听地址:LISTEN_ADDRESS
-本地存储路径:STORAGE_ROOT
+本地存储路径:STORAGE_ROOT  
+
